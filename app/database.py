@@ -6,9 +6,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 #SQLALCHEMY_DATABASE_URL = "mysql+mysqlconnector://root:@localhost:3306/fastapi"
-DATABASE_URL ="postgres://hmzfwjaablpcld:ad0854bd76281509931756b9bf31bc196b971c7259e8acf99190d7779f7c4d9d@ec2-34-238-26-109.compute-1.amazonaws.com:5432/db92ma3odp73g6"
+#DATABASE_URL ="postgres://hmzfwjaablpcld:ad0854bd76281509931756b9bf31bc196b971c7259e8acf99190d7779f7c4d9d@ec2-34-238-26-109.compute-1.amazonaws.com:5432/db92ma3odp73g6"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./fast_api.db"
 engine = create_engine(
-    DATABASE_URL,
+    SQLALCHEMY_DATABASE_URL,
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
