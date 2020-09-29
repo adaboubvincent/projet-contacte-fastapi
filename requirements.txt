@@ -1,2 +1,1 @@
-Python==3.7.4
 fastapi==0.61.1
