@@ -129,10 +129,6 @@ def create_contacte(user: schemas.UserCreate, db: Session = Depends(get_db)):
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
     users = db.query(models.User).all()
     user = authentificated.authenticate_user(db, form_data.username, form_data.password)
-    print(users)
-    print(user)
-    print(form_data.username)
-    print(form_data.password)
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
