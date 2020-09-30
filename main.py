@@ -21,6 +21,11 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
+def get():
+    '''Méthode d'accueil '''
+    
+    return {'message' : 'Well come my friend to my fastapi project'}
 
 @app.post("/secteur/ajouter/")
 def create_secteur(secteur: schemas.SecteurCreate, db: Session = Depends(get_db)):
